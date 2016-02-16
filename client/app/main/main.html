@@ -1,0 +1,45 @@
+<header class="hero-unit" id="banner">
+  <div class="container">
+    <h1>Focos de mosquitos Aedes Aegypti </h1>
+    <p class="lead">Colabore, divulgue !</p>
+  </div>
+</header>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+        <form class="thing-form" ng-if="main.isLoggedIn">
+          <label>Qual o endereço do foco?</label>
+          <p>
+            <input type="text" class="form-control" placeholder="digite o nome do local" g-places-autocomplete ng-model="main.position" />
+          </p>
+          <label>Diga sobre o foco ( Ex: Proximo a antiga fábrica ).</label>
+          <p>
+            <textarea class="form-control" placeholder="descrição do foco" ng-model="main.foco.descricao"></textarea>
+          </p>
+          <p>
+              <span class="input-group-btn">
+              <button type="submit" class="btn btn-danger" ng-click="main.addThing()">Reportar foco</button>
+            </span>
+          </p>
+        </form>
+    </div>
+    <div class="col-lg-12">
+      <h1 class="page-header">Focos da dengue em Lorena</h1>
+      <map zoom="14" center="[-22.7338724,-45.1201112]">
+        <marker
+         position="[{{foco.lat}}, {{foco.lng}}]" 
+         on-click="main.showInfoWindow(event, foco)"
+         optimized="true"
+         title="{{foco.user.name}}"
+         icon="/assets/images/dengue.png"
+         ng-repeat="foco in main.focos">
+        </marker>
+      </map>
+    </div>
+  </div>
+
+
+
+</div>
