@@ -7,7 +7,7 @@ class MainController {
   constructor($http, $scope, socket, Auth, NgMap) {
     this.$http = $http;
     this.NgMap = NgMap;
-    this.isLoggedIn = Auth.isLoggedIn();
+    this.isLoggedIn = Auth.isLoggedIn
     this.getCurrentUser = Auth.getCurrentUser;
     this.foco = {};
 
@@ -32,11 +32,20 @@ class MainController {
           lat: this.position.geometry.location.lat(),
           lng: this.position.geometry.location.lng(),
           user: this.getCurrentUser()._id
-        }
+        }  
 
-      this.$http.post('/api/things', focoDengue);
-      this.foco = {};
-      this.position = '';
+      this.$http.post('/api/things', focoDengue).then(result => {
+         var index = _.findIndex(this.focos, function(foco){
+            return foco._id == result.data._id;
+         })
+
+        this.focos[index] = result.data;
+        this.foco = {};
+        this.position = '';
+        $('#modal-reportar').modal('hide');
+      })
+
+
     }
   }
 

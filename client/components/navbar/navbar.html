@@ -1,5 +1,5 @@
-<div class="navbar navbar-default navbar-static-top" ng-controller="NavbarController">
-  <div class="container">
+<div class="navbar navbar-default navbar-static-top  navbar-class" ng-controller="NavbarController">
+  <div class="container-fluid">
     <div class="navbar-header">
       <button class="navbar-toggle" type="button" ng-click="nav.isCollapsed = !nav.isCollapsed">
         <span class="sr-only">Navegação</span>
@@ -10,7 +10,7 @@
       <!-- <a href="/" class="navbar-brand">foco</a> -->
     </div>
     <div collapse="nav.isCollapsed" class="navbar-collapse collapse" id="navbar-main">
-      <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav" ng-show="nav.isLoggedIn()">
         <li ng-repeat="item in nav.menu" ui-sref-active="active">
             <a ui-sref="{{item.state}}">{{item.title}}</a>
         </li>

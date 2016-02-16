@@ -21,6 +21,17 @@ function respondWithResult(res, statusCode) {
   };
 }
 
+function populateResult(res){
+  return function(entity){
+    if(entity){
+      return Thing.findById(entity._id).populate('user','name').execAsync().then((response)=>{
+        console.log(response)
+        res.status(201).json(response)
+      })
+    }
+  }
+}
+
 function saveUpdates(updates) {
   return function(entity) {
     var updated = _.merge(entity, updates);
@@ -61,14 +72,20 @@ function handleError(res, statusCode) {
 
 // Gets a list of Things
 export function index(req, res) {
-  Thing.find().populate('user', 'name').execAsync()
+  Thing
+    .find()
+    .populate('user', 'name')
+    .execAsync()
     .then(respondWithResult(res))
     .catch(handleError(res));
 }
 
 // Gets a single Thing from the DB
 export function show(req, res) {
-  Thing.findByIdAsync(req.params.id)
+  Thing
+    .findById(req.params.id)
+    .populate('user', 'name')
+    .execAsync()
     .then(handleEntityNotFound(res))
     .then(respondWithResult(res))
     .catch(handleError(res));
@@ -77,8 +94,9 @@ export function show(req, res) {
 // Creates a new Thing in the DB
 export function create(req, res) {
   Thing.createAsync(req.body)
-    .then(respondWithResult(res, 201))
-    .catch(handleError(res));
+    .then(populateResult(res))
+    //.then(respondWithResult(res, 201))
+    //.catch(handleError(res));
 }
 
 // Updates an existing Thing in the DB

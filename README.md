@@ -1,10 +1,9 @@
-# foco
+# foco lorena
 
-This project was generated with the [Angular Full-Stack Generator](https://github.com/DaftMonk/generator-angular-fullstack) version 3.3.0.
 
-## Getting Started
+## Iniciando
 
-### Prerequisites
+### Pre-requisitos
 
 - [Git](https://git-scm.com/)
 - [Node.js and npm](nodejs.org) Node ^4.2.3, npm ^2.14.7
@@ -12,20 +11,20 @@ This project was generated with the [Angular Full-Stack Generator](https://githu
 - [Grunt](http://gruntjs.com/) (`npm install --global grunt-cli`)
 - [MongoDB](https://www.mongodb.org/) - Keep a running daemon with `mongod`
 
-### Developing
+### Desenvolvimento
 
-1. Run `npm install` to install server dependencies.
+1. Execute `npm install` para instalar as dependencias do servidor.
 
-2. Run `bower install` to install front-end dependencies.
+2. Execute `bower install` para instalar as dependencias do client.
 
-3. Run `mongod` in a separate shell to keep an instance of the MongoDB Daemon running
+3. Execute `mongod` em um shell paralelo para iniciar o banco de dados mongoDB. ( caso seja Windows, vá na pasta do mongodb e execute mondod.exe)
 
-4. Run `grunt serve` to start the development server. It should automatically open the client in your browser when ready.
+4. Execute `grunt serve` para iniciar o servidor de desenvolvimento. Ele deve automaticamente abrir um browser quando estiver pronto.
 
-## Build & development
+## Build & Desenvolvimento
 
-Run `grunt build` for building and `grunt serve` for preview.
+Execute `grunt build` para buildar o projeto e `grunt serve` para um preview.
 
-## Testing
+## Testes
 
-Running `npm test` will run the unit tests with karma.
+Execute `npm test` vai executar os testes unitários com o karma.
