@@ -1,21 +1,21 @@
-'use strict';
+// 'use strict';
 
-describe('Controller: FocoCtrl', function () {
+// describe('Controller: FocoCtrl', function () {
 
-  // load the controller's module
-  beforeEach(module('focoApp'));
+//   // load the controller's module
+//   beforeEach(module('focoApp'));
 
-  var FocoCtrl, scope;
+//   var FocoCtrl, scope;
 
-  // Initialize the controller and a mock scope
-  beforeEach(inject(function ($controller, $rootScope) {
-    scope = $rootScope.$new();
-    FocoCtrl = $controller('FocoCtrl', {
-      $scope: scope
-    });
-  }));
+//   // Initialize the controller and a mock scope
+//   beforeEach(inject(function ($controller, $rootScope) {
+//     scope = $rootScope.$new();
+//     FocoCtrl = $controller('FocoCtrl', {
+//       $scope: scope
+//     });
+//   }));
 
-  it('should ...', function () {
-    expect(1).toEqual(1);
-  });
-});
+//   it('should ...', function () {
+//     expect(1).toEqual(1);
+//   });
+// });
