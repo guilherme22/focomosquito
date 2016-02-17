@@ -4,7 +4,7 @@
 		<div class="row ">
 			<div class="col-md-6 column paddingtop10">
 
-				 <map zoom="14" center="[{{foco.lat}}, {{foco.lng}}]">
+				 <map zoom="17" center="[{{foco.lat}}, {{foco.lng}}]">
 			        <marker
 			         position="[{{foco.lat}}, {{foco.lng}}]" 
 			      	 optimized="true"
@@ -17,7 +17,7 @@
 
 				<div class="reportarDenuncia"><!-- <i class="glyphicon glyphicon-exclamation-sign"></i>  Existe alguma coisa errada com esta ocorrência? <br>
 					<a id="modal-notificacao" href="#modal-container-notificacao" role="button" class="btn-link" data-toggle="modal">Reporte à nossa equipe</a>  --></div>
-					<div class="modal fade" id="modal-container-notificacao" role="dialog" aria-labelledby="notificacao" aria-hidden="true">
+					<div ng-if="foco.denuncia" class="modal fade" id="modal-container-notificacao" role="dialog" aria-labelledby="notificacao" aria-hidden="true">
 						<div class="modal-dialog">
 							<div class="modal-content">
 
@@ -92,14 +92,12 @@
 
 				<div class="well well-sm">
 					<ul class="detailList ">
-						<li> <i class="glyphicon glyphicon-cog"></i>
-							Nº 604          </li>
 							<li> <i class="glyphicon glyphicon-tag"></i>
-								Focos da dengue          </li>
+								Focos do Aedes Aegypti          </li>
 								<li> <i class="glyphicon glyphicon-calendar"></i>
-									16/02/2016          </li>
+									{{ foco.created | date : 'dd/MM/yyyy'}}  </li>
 									<li> <i class="glyphicon glyphicon-time"></i>
-										12:32          </li>
+										{{ foco.created | date : 'hh:mm'}}      </li>
 										<li> <i class="glyphicon glyphicon-map-marker"></i>
 											{{foco.rua}}
 										</li>          
