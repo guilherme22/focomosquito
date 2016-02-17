@@ -1,0 +1,150 @@
+<div class="container detalhes">
+	<div class="row ">
+
+		<div class="row ">
+			<div class="col-md-6 column paddingtop10">
+
+				 <map zoom="14" center="[{{foco.lat}}, {{foco.lng}}]">
+			        <marker
+			         position="[{{foco.lat}}, {{foco.lng}}]" 
+			      	 optimized="true"
+			         title="{{foco.user.name}}"
+			         icon="/assets/images/dengue.png"
+			      	>
+			        </marker>
+			      </map>
+
+
+				<div class="reportarDenuncia"><!-- <i class="glyphicon glyphicon-exclamation-sign"></i>  Existe alguma coisa errada com esta ocorrência? <br>
+					<a id="modal-notificacao" href="#modal-container-notificacao" role="button" class="btn-link" data-toggle="modal">Reporte à nossa equipe</a>  --></div>
+					<div class="modal fade" id="modal-container-notificacao" role="dialog" aria-labelledby="notificacao" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+									<h4 class="modal-title" id="notificacao"> Reportar denúncia </h4>
+								</div>
+								<form action="/cascavel/PR/detalhes/604-aedes-aegypti" method="post">
+									<div class="modal-body" style="width: 600px">
+										<fieldset>
+											<div class="container-fluid">
+												<div class="row">
+													<div class="well well-sm" style="max-width: 520px">
+														<p>Preencha os dados abaixo para alertar os gestores do projeto nas seguintes situações:
+														</p><ol>
+														<li>Dados incorretos sobre a ocorrência;</li>
+														<li>A ocorrência já foi solucionada pelas autoridades competentes;</li>
+														<li>Comentários que possam ajudar os gestores a entender melhor a ocorrência.</li>
+													</ol>
+													<br>
+													As informações aqui digitadas, bem como seus dados pessoais não ficarão visíveis ao público.
+													<p></p>
+												</div>
+												<div class="form-group">
+													<label for="mensagem"> Mensagem * </label>
+													<textarea class="form-control" name="mensagem" id="mensagem" placeholder="Digite o texto da notificação" rows="4" style="margin-bottom:10px;" required="required"></textarea>
+												</div>
+												<div class="form-group">
+
+													<label for="nome"> Nome * </label>
+													<input type="text" class="form-control col-lg-12" id="nome" name="nome" placeholder="Digite seu nome" required="required">
+
+												</div>
+												<div class="form-group">
+													<label for="email"> E-mail * </label>
+													<input type="email" class="form-control" id="email" name="email" placeholder="Digite seu e-mail" required="required">
+												</div>
+												<div class="form-group">
+													<label for="telefone"> Telefone </label>
+													<input type="text" class="form-control" id="telefone" name="telefone" placeholder="Digite o telefone no formato (xx) xxxx-xxxxx">
+												</div>
+											</div>
+										</div>
+									</fieldset>
+									<input type="hidden" name="task" value="notificacao">
+									<div class="modal-footer">
+										<button type="button" class="btn btn-info" data-dismiss="modal">Cancelar</button>
+										<input type="submit" class="btn btn-success" value="Reportar denúncia">
+									</div>
+								</div>
+								<input type="hidden" name="9c068fb6f7984f13c688d50f1f03827e" value="1">
+							</form>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 column">
+				<div class="titulo_ocorrencia">
+					<div class="pull-left" style="max-width: 80%">
+						<h1 class="titulo_ocorrencia">Aedes Aegypti</h1>
+						<span class="pull-right" style="display:none">
+							<button type="button" class="btn btn-default btn-danger"><i class="glyphicon glyphicon-thumbs-down"></i></button>        
+							<button type="button" class="btn btn-default btn-success"><i class="glyphicon glyphicon-thumbs-up"></i></button>        
+						</span>        
+					</div>
+					<div class="pull-right">
+						<span style="font-size: 100%" class="pull-right label label-info tlp" title="" data-toggle="tooltip" data-original-title="Status da Ocorrência: Encaminhada">Reportado</span>
+					</div>
+				</div>
+				<br style="clear:both">
+
+				<div class="well well-sm">
+					<ul class="detailList ">
+						<li> <i class="glyphicon glyphicon-cog"></i>
+							Nº 604          </li>
+							<li> <i class="glyphicon glyphicon-tag"></i>
+								Focos da dengue          </li>
+								<li> <i class="glyphicon glyphicon-calendar"></i>
+									16/02/2016          </li>
+									<li> <i class="glyphicon glyphicon-time"></i>
+										12:32          </li>
+										<li> <i class="glyphicon glyphicon-map-marker"></i>
+											{{foco.rua}}
+										</li>          
+									</ul>
+								</div>
+								<h2 class="text-muted descricao_ocorrencia"> Descrição da ocorrência </h2>
+								<dl>
+									<dd>
+										{{foco.descricao}}      </dd>
+									</dl>
+
+
+							<!-- 		<h4 class="text-success"> Respostas (1) <small><span title="" data-toggle="tooltip" data-placement="bottom" class="tlp" data-original-title="Veja abaixo, as trocas de mensagens entre a prefeitura e o cidadão"><i class="glyphicon glyphicon-info-sign"></i></span></small></h4> -->
+								<!-- 	<div class="panel-group" id="panel-respostas"> 
+										<div class="panel panel-default">
+											<div class="panel-heading"> 
+												<h5>
+													<div>   
+														<a class="panel-title" data-toggle="collapse" data-parent="#panel-respostas" href="#panel-element-601">
+															<b>Resposta #1</b>&nbsp;
+														</a>
+													</div>                                
+													<div class="pull-left">   
+														<i class="glyphicon glyphicon-calendar"></i> 16/02/2016                                     <i class="glyphicon glyphicon-time"></i> 12:57                                </div>                                
+														<div class="pull-right"><span class="label label-info">Encaminhada</span></div>
+													</h5>                            
+													<br style="clear:both">
+												</div>
+												<div id="panel-element-601" class="panel-collapse collapse in">
+
+													<div class="well well-sm" style="margin-bottom: 0px; background-color: #fff">                                                        
+														<b>Observação: </b> <br>
+														<p>Enviado para a Prefeitura de Cascavel.
+
+															Código de acompanhamento Processo: N° 607/2016 Cód. Verificador: P2LL</p>
+															<b>Anexos: </b> <br>
+															<a href="/cascavel/PR/detalhes/604-aedes-aegypti/download/601/1" target="_blank"><i class="glyphicon glyphicon-paperclip"></i> Anexo 1</a>
+															<br style="clear:both">
+														</div>                            
+													</div>
+												</div>      
+											</div> -->
+										</div>
+									</div>
+								</div>
+
+
+							</div>

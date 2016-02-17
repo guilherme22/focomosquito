@@ -5,15 +5,18 @@
 <div class="container-fluid">
   <div class="row">
 
-    <div class="col-lg-4">
-     <form class="thing-form" ng-if="main.isLoggedIn()">
-            <button type="button" ng-if="main.isLoggedIn()" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#modal-reportar"><i class="glyphicon glyphicon-plus"></i> Reportar foco </button>
-        </form>
+    <div class="col-lg-2">
+      <p></p>
+         <p>
+           <button type="button" ng-if="main.isLoggedIn()" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#modal-reportar"><i class="glyphicon glyphicon-plus"></i> Reportar foco </button>
+         </p>
       </div>
-    <div class="col-lg-4">
-          <p><h3>Mapa Mosquito em Lorena</h3></p>
+    <div class="col-lg-9">
+          <p><h1 ng-hide="main.isLoggedIn()">Mapa para localizar e fiscalizar os focos de mosquitos em Lorena.</h1></p>
+          <p><h4 ng-hide="main.isLoggedIn()"> Para colaborar, crie sua conta :) </h4></p>
+         
     </div>
-    <div class="col-lg-4"></div>
+    <div class="col-lg-1"></div>
     <div class="col-lg-12">
       <map zoom="14" center="[-22.7338724,-45.1201112]">
         <marker

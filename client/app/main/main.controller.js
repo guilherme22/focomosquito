@@ -31,6 +31,7 @@ class MainController {
           descricao: this.foco.descricao,
           lat: this.position.geometry.location.lat(),
           lng: this.position.geometry.location.lng(),
+          rua: this.position.formatted_address,
           user: this.getCurrentUser()._id
         }  
 
@@ -53,7 +54,7 @@ class MainController {
      
         var infowindow = new google.maps.InfoWindow();
         var center = new google.maps.LatLng(foco.lat,foco.lng);
-        infowindow.setContent('<h3> Reportado por: ' + foco.user.name + '</h3> </br> <p><strong>'+ foco.descricao +'</strong></p>');
+        infowindow.setContent('<h3> Reportado por: ' + foco.user.name + '</h3> </br> <p><strong>'+ foco.descricao +'</strong></p> <p> <a href="/foco/'+foco._id+'">Detalhe </a></p>');
 
         infowindow.setPosition(center);
         infowindow.open(this.map);
