@@ -12,9 +12,22 @@ angular.module('focoApp', [
   'ui.bootstrap',
   'validation.match',
   'ngMap',
-  'google.places'
+  'google.places',
+  'ezfb'
 ])
-  .config(function($urlRouterProvider, $locationProvider) {
+  .config(function($urlRouterProvider, $locationProvider, ezfbProvider) {
+     ezfbProvider.setLocale('pt_BR');
+
+     ezfbProvider.setInitParams({
+   
+      appId: '851921558250198',
+
+      // Module default is `v2.4`.
+      // If you want to use Facebook platform `v2.3`, you'll have to add the following parameter.
+      // https://developers.facebook.com/docs/javascript/reference/FB.init
+      version: 'v2.5'
+    });  
+
     $urlRouterProvider
       .otherwise('/');
 
