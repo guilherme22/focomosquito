@@ -35,8 +35,11 @@ describe('Thing API:', function() {
       request(app)
         .post('/api/things')
         .send({
-          name: 'New Thing',
-          info: 'This is the brand new thing!!!'
+           "descricao" : "novo foco",
+           "lat" : "-22.7392003",
+           "lng" : "-45.10553779999998",
+           "rua" : "Rua Lorena",
+           "user" : "56c25b3e6af0e61c0813c589",
         })
         .expect(201)
         .expect('Content-Type', /json/)
@@ -50,8 +53,8 @@ describe('Thing API:', function() {
     });
 
     it('should respond with the newly created thing', function() {
-      newThing.name.should.equal('New Thing');
-      newThing.info.should.equal('This is the brand new thing!!!');
+      newThing.descricao.should.equal('novo foco');
+      newThing.rua.should.equal('Rua Lorena');
     });
 
   });
@@ -78,8 +81,8 @@ describe('Thing API:', function() {
     });
 
     it('should respond with the requested thing', function() {
-      thing.name.should.equal('New Thing');
-      thing.info.should.equal('This is the brand new thing!!!');
+      newThing.descricao.should.equal('novo foco');
+      newThing.rua.should.equal('Rua Lorena');
     });
 
   });
@@ -91,8 +94,11 @@ describe('Thing API:', function() {
       request(app)
         .put('/api/things/' + newThing._id)
         .send({
-          name: 'Updated Thing',
-          info: 'This is the updated thing!!!'
+           "descricao" : "updated foco",
+           "lat" : "-22.7392003",
+           "lng" : "-45.10553779999998",
+           "rua" : "Rua Lorena updated",
+           "user" : "56c25b3e6af0e61c0813c589",
         })
         .expect(200)
         .expect('Content-Type', /json/)
@@ -110,8 +116,8 @@ describe('Thing API:', function() {
     });
 
     it('should respond with the updated thing', function() {
-      updatedThing.name.should.equal('Updated Thing');
-      updatedThing.info.should.equal('This is the updated thing!!!');
+      updatedThing.descricao.should.equal('updated foco');
+      updatedThing.rua.should.equal('Rua Lorena updated');
     });
 
   });
