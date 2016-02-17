@@ -7,7 +7,7 @@
 
     <div class="col-lg-4">
      <form class="thing-form" ng-if="main.isLoggedIn()">
-            <button type="button" ng-if="main.isLoggedIn()" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#modal-reportar">Reportar foco</button>
+            <button type="button" ng-if="main.isLoggedIn()" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#modal-reportar"><i class="glyphicon glyphicon-plus"></i> Reportar foco </button>
         </form>
       </div>
     <div class="col-lg-4">
@@ -44,16 +44,16 @@
             </p>
             <label>Diga sobre o foco ( Ex: Proximo a antiga fábrica ).</label>
             <p>
-              <textarea class="form-control" placeholder="descrição do foco" ng-model="main.foco.descricao"></textarea>
+              <textarea class="form-control" placeholder="Diga como está o local, um ponto de referencia." ng-model="main.foco.descricao"></textarea>
             </p>
             <p>
                 <span class="input-group-btn">
-                <button type="submit" class="btn btn-danger" ng-click="main.addThing()">Adicionar Foco</button>
+                <button type="submit" class="btn btn-success" ng-click="main.addThing()">Adicionar Foco</button>
               </span>
             </p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
         </div>
       </div>
       
