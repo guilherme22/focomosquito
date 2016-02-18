@@ -105,11 +105,22 @@
 										</li>          
 									</ul>
 								</div>
+
+								<div>
+
+								</div>
+							
 								<h2 class="text-muted descricao_ocorrencia"> Descrição da ocorrência </h2>
 								<dl>
+
 									<dd>
-										{{foco.descricao}}      </dd>
-									</dl>
+										{{foco.descricao}}     
+									 </dd>
+								</dl>
+								<div ng-if="foco.foto">
+								 	<h2 class="text-muted descricao_ocorrencia"> Foto da ocorrência </h2>
+								 	<img id="image-foco" ng-src="{{foco.foto}}">
+								 </div>
 
 
 							<!-- 		<h4 class="text-success"> Respostas (1) <small><span title="" data-toggle="tooltip" data-placement="bottom" class="tlp" data-original-title="Veja abaixo, as trocas de mensagens entre a prefeitura e o cidadão"><i class="glyphicon glyphicon-info-sign"></i></span></small></h4> -->

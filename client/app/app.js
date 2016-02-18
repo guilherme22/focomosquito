@@ -13,7 +13,8 @@ angular.module('focoApp', [
   'validation.match',
   'ngMap',
   'google.places',
-  'ezfb'
+  'ezfb',
+  'naif.base64'
 ])
   .config(function($urlRouterProvider, $locationProvider, ezfbProvider) {
      ezfbProvider.setLocale('pt_BR');

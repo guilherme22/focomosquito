@@ -18,7 +18,8 @@
     "angular-validation-match": "~1.5.2",
     "angular-google-places-autocomplete": "^0.2.7",
     "ngmap": "^1.16.7",
-    "angular-easyfb": "^1.4.1"
+    "angular-easyfb": "^1.4.1",
+    "angular-base64-upload": "^0.1.17"
   },
   "devDependencies": {
     "angular-mocks": "~1.4.0"

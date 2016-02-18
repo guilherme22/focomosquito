@@ -8,7 +8,8 @@ var ThingSchema = new mongoose.Schema({
   lng: String,
   rua: String,
   user: {type: String, ref: 'User'},
-  created: { type: Date, default: Date.now }
+  created: { type: Date, default: Date.now },
+  foto: String
 });
 
 export default mongoose.model('Thing', ThingSchema);
