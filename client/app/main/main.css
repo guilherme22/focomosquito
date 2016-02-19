@@ -32,3 +32,7 @@ map {
 .pac-container {
     z-index: 1051 !important;
 }
+
+.logo{
+  padding-top: 7px;
+}

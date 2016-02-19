@@ -18,6 +18,7 @@
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
+        <li>  <img class="logo" src="assets/images/logo.png">   </li>
         <li ng-hide="nav.isLoggedIn()" ui-sref-active="active"><a ui-sref="signup">Criar conta</a></li>
         <li ng-hide="nav.isLoggedIn()" ui-sref-active="active"><a ui-sref="login">Acessar conta</a></li>
         <li ng-show="nav.isLoggedIn()"><p class="navbar-text">Olá {{ nav.getCurrentUser().name }}</p> </li>
