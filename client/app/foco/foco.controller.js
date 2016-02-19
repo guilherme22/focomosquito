@@ -8,10 +8,8 @@ angular.module('focoApp')
   		google.maps.InfoWindow.prototype.close()
 		   
 
-  		$http.get('/api/things/'+$stateParams.id).then(function(response){
-  
-		    
-
+  		$http.get('/api/things/'+$stateParams.cidade+'/'+$stateParams.id).then(function(response){
+ 
   			$scope.foco = response.data;
   		})
 

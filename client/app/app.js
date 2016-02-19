@@ -30,7 +30,7 @@ angular.module('focoApp', [
     });  
 
     $urlRouterProvider
-      .otherwise('/');
+      .otherwise('/lorena');
 
     $locationProvider.html5Mode(true);
   });

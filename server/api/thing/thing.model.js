@@ -4,6 +4,10 @@ var mongoose = require('bluebird').promisifyAll(require('mongoose'));
 
 var ThingSchema = new mongoose.Schema({
   descricao: String,
+  cidade: {
+  	type: String,
+  	default: 'lorena'
+  },
   lat: String,
   lng: String,
   rua: String,

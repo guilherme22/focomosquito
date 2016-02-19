@@ -73,7 +73,7 @@ function handleError(res, statusCode) {
 // Gets a list of Things
 export function index(req, res) {
   Thing
-    .find()
+    .find({cidade: req.params.cidade})
     .populate('user', 'name')
     .execAsync()
     .then(respondWithResult(res))
@@ -93,6 +93,7 @@ export function show(req, res) {
 
 // Creates a new Thing in the DB
 export function create(req, res) {
+  req.body.cidade = req.params.cidade;
   Thing.createAsync(req.body)
     .then(populateResult(res))
     //.then(respondWithResult(res, 201))
