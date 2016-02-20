@@ -25,6 +25,8 @@ module.exports = function(config) {
       'client/bower_components/angular-google-places-autocomplete/src/autocomplete.js',
       'client/bower_components/angular-google-places-autocomplete/dist/autocomplete.min.js',
       'client/bower_components/ngmap/build/scripts/ng-map.js',
+      'client/bower_components/angular-easyfb/build/angular-easyfb.js',
+      'client/bower_components/angular-base64-upload/src/angular-base64-upload.js',
       'client/bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'node_modules/socket.io-client/socket.io.js',

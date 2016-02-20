@@ -12,7 +12,7 @@ describe('Thing API:', function() {
 
     beforeEach(function(done) {
       request(app)
-        .get('/api/things')
+        .get('/api/things/lorena')
         .expect(200)
         .expect('Content-Type', /json/)
         .end((err, res) => {
@@ -33,7 +33,7 @@ describe('Thing API:', function() {
   describe('POST /api/things', function() {
     beforeEach(function(done) {
       request(app)
-        .post('/api/things')
+        .post('/api/things/lorena')
         .send({
            "descricao" : "novo foco",
            "lat" : "-22.7392003",
@@ -59,7 +59,7 @@ describe('Thing API:', function() {
 
   });
 
-  describe('GET /api/things/:id', function() {
+  describe('GET /api/things/lorena/:id', function() {
     var thing;
 
     beforeEach(function(done) {
@@ -87,12 +87,12 @@ describe('Thing API:', function() {
 
   });
 
-  describe('PUT /api/things/:id', function() {
+  describe('PUT /api/things/:cidade/:id', function() {
     var updatedThing;
 
     beforeEach(function(done) {
       request(app)
-        .put('/api/things/' + newThing._id)
+        .put('/api/things/lorena/' + newThing._id)
         .send({
            "descricao" : "updated foco",
            "lat" : "-22.7392003",

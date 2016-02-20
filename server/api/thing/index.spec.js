@@ -34,31 +34,31 @@ describe('Thing API Router:', function() {
     thingIndex.should.equal(routerStub);
   });
 
-  describe('GET /api/things', function() {
+  describe('GET /api/things/:cidade', function() {
 
     it('should route to thing.controller.index', function() {
       routerStub.get
-        .withArgs('/', 'thingCtrl.index')
+        .withArgs('/:cidade', 'thingCtrl.index')
         .should.have.been.calledOnce;
     });
 
   });
 
-  describe('GET /api/things/:id', function() {
+  describe('GET /api/things//:cidade/:id', function() {
 
     it('should route to thing.controller.show', function() {
       routerStub.get
-        .withArgs('/:id', 'thingCtrl.show')
+        .withArgs('/:cidade/:id', 'thingCtrl.show')
         .should.have.been.calledOnce;
     });
 
   });
 
-  describe('POST /api/things', function() {
+  describe('POST /api/things/:cidade', function() {
 
     it('should route to thing.controller.create', function() {
       routerStub.post
-        .withArgs('/', 'thingCtrl.create')
+        .withArgs('/:cidade', 'thingCtrl.create')
         .should.have.been.calledOnce;
     });
 
@@ -68,7 +68,7 @@ describe('Thing API Router:', function() {
 
     it('should route to thing.controller.update', function() {
       routerStub.put
-        .withArgs('/:id', 'thingCtrl.update')
+        .withArgs('/:cidade/:id', 'thingCtrl.update')
         .should.have.been.calledOnce;
     });
 
