@@ -10,7 +10,7 @@ class MainController {
     this.isLoggedIn = Auth.isLoggedIn
     this.getCurrentUser = Auth.getCurrentUser;
     this.$cidade = $stateParams.cidade || 'lorena'
-    this.foco = {};
+
 
     $http.get('/api/things/' + this.$cidade ).then(response => {
       this.focos = response.data;
@@ -24,37 +24,6 @@ class MainController {
       });
    }
 
-
-  addThing() {
-    if (this.foco.descricao) {
-
-
-        var focoDengue = {
-          descricao: this.foco.descricao,
-          lat: this.position.geometry.location.lat(),
-          lng: this.position.geometry.location.lng(),
-          rua: this.position.formatted_address,
-          user: this.getCurrentUser()._id,
-          foto: this.foco.foto.base64 ? 'data:'+ this.foco.foto.filetype + ';base64,' + this.foco.foto.base64 : '' 
-          
-        }  
-
-        console.log(focoDengue);
-
-      this.$http.post('/api/things/' +this.$cidade, focoDengue).then(result => {
-         var index = _.findIndex(this.focos, function(foco){
-            return foco._id == result.data._id;
-         })
-
-        this.focos[index] = result.data;
-        this.foco = {};
-        this.position = '';
-        $('#modal-reportar').modal('hide');
-      })
-
-
-    }
-  }
 
   showInfoWindow(event, foco){
      

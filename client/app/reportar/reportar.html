@@ -1,0 +1,28 @@
+<div class="container">
+	<div class="row">
+		<div class="col-lg-12">
+			<form role="form">
+			    <div class="form-group">
+				     <label>Qual o endereço do foco?</label>
+		            <p>
+		              <input type="text" class="form-control" placeholder="digite o nome do local" g-places-autocomplete ng-model="position" />
+		            </p>
+		            <label>Tem imagem do foco?</label>
+		             <input type='file' accept="image/*", ng-model='foco.foto' base-sixty-four-input>
+		            <p>
+			    </div>
+			    <div class="form-group">
+		    	  <p>
+				      <textarea class="form-control" placeholder="Diga como está o local, um ponto de referencia." ng-model="foco.descricao"></textarea>
+			      </p>
+			    </div>
+			    <div class="form-group">
+		    	  <span class="input-group-btn">
+	                <button type="submit" class="btn btn-success add-foco" ng-click="addThing()">Adicionar Foco</button>
+	              </span>
+			    </div>
+		  </form>
+		</div>
+	</div>
+</div>
+			

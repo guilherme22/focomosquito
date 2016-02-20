@@ -29,10 +29,14 @@
 map {
   height: 600px;
 }
-.pac-container {
+/*.pac-container {
     z-index: 1051 !important;
-}
+}*/
 
 .logo{
   padding-top: 7px;
 }
+/*
+.add-foco{
+  z-index: 9999999999;
+}*/

@@ -7,7 +7,8 @@
 
     <div class="col-lg-4">
       <p></p>
-     <p>  <button  type="button" ng-if="main.isLoggedIn()" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#modal-reportar"><i class="glyphicon glyphicon-plus"></i> Reportar foco </button>
+     <p>  
+      <a  role="button" ng-if="main.isLoggedIn()" href="/{{main.$cidade}}/reportar" class="btn btn-danger btn-lg"><i class="glyphicon glyphicon-plus"></i> Reportar foco </a>
           </p>
           <p>
               <a ng-if="!main.isLoggedIn()"  href="/login" class="btn btn-danger btn-lg" role="button">Reportar foco</a>
@@ -33,9 +34,9 @@
   </div>
 </div>
 
-<div class="modal fade" id="modal-reportar" role="dialog">
+<!-- <div class="modal fade" id="modal-reportar" role="dialog">
     <div class="modal-dialog">
-      <!-- Modal content-->
+ 
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -57,7 +58,7 @@
             </p>
             <p>
                 <span class="input-group-btn">
-                <button type="submit" class="btn btn-success" ng-click="main.addThing()">Adicionar Foco</button>
+                <button type="submit" class="btn btn-success add-foco" ng-click="main.addThing()">Adicionar Foco</button>
               </span>
             </p>
         </div>
@@ -68,3 +69,4 @@
       
     </div>
   </div>
+ -->

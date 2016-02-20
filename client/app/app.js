@@ -4,6 +4,7 @@ angular.module('focoApp', [
   'focoApp.auth',
   'focoApp.admin',
   'focoApp.constants',
+  'focoApp.reportar',
   'ngCookies',
   'ngResource',
   'ngSanitize',
