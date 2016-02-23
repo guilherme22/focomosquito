@@ -20,7 +20,7 @@
    
    </div>
     <div class="col-lg-12">
-      <map zoom="15" center="[{{main.focos[0].lat || -22.7338724}},{{main.focos[0].lng || -45.1201112}}]">
+      <map zoom="15" center="{{main.$cidadeSelecionada}}, {{main.$estadoSelecionado.sigla}}">
         <marker
          position="[{{foco.lat}}, {{foco.lng}}]" 
          on-click="main.showInfoWindow(event, foco)"
@@ -34,7 +34,7 @@
   </div>
 </div>
 
-<!-- <div class="modal fade" id="modal-reportar" role="dialog">
+<div class="modal fade in" id="modal-reportar" role="dialog">
     <div class="modal-dialog">
  
       <div class="modal-content">
@@ -45,22 +45,28 @@
         <div class="modal-body">
           <label>Qual o endereço do foco?</label>
             <p>
-              <input type="text" class="form-control" placeholder="digite o nome do local" g-places-autocomplete ng-model="main.position" />
-            </p>
-            <label>Tem imagem do foco?</label>
-             <input type='file' accept="image/*", ng-model='main.foco.foto' base-sixty-four-input>
-            <p>
+              <select 
+                name="estados"
+                id="estados"
+                ng-model="main.$estadoSelecionado"
+                ng-options="estado.nome for estado in main.$brasil.$estados track by estado.sigla"
+              >
+                  <!-- <option value="{{estado}}" ng-repeat="estado in main.$brasil.$estados track by $index">
+                      {{estado.nome}}
+                  </option> -->
+              </select>
 
-            </p>
-            <label>Diga sobre o foco ( Ex: Proximo a antiga fábrica ).</label>
-            <p>
-              <textarea class="form-control" placeholder="Diga como está o local, um ponto de referencia." ng-model="main.foco.descricao"></textarea>
-            </p>
-            <p>
-                <span class="input-group-btn">
-                <button type="submit" class="btn btn-success add-foco" ng-click="main.addThing()">Adicionar Foco</button>
-              </span>
-            </p>
+             <p>
+             
+              <select
+                name="cidades"
+                id="cidades"
+                ng-options="cidade for cidade in main.$estadoSelecionado.cidades"
+                ng-model="main.$cidadeSelecionada"
+              >
+
+              </select>
+             </p> 
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
@@ -69,4 +75,3 @@
       
     </div>
   </div>
- -->

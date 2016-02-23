@@ -1,8 +1,9 @@
 'use strict';
 
 class LoginController {
-  constructor(Auth, $state) {
+  constructor(Auth, $state, $window) {
     this.user = {};
+    this.$window = $window
     this.errors = {};
     this.submitted = false;
 
@@ -20,7 +21,8 @@ class LoginController {
       })
       .then(() => {
         // Logged in, redirect to home
-        this.$state.go('main');
+        var city = this.$window.sessionStorage.getItem('cidade');
+        this.$state.go('main', {cidade: city});
       })
       .catch(err => {
         this.errors.other = err.message;

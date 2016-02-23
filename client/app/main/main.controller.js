@@ -4,12 +4,21 @@
 
 class MainController {
 
-  constructor($http, $scope, socket, Auth, NgMap,$stateParams) {
+  constructor($http, $scope, socket, Auth, NgMap,$stateParams,$timeout,$window, Util) {
     this.$http = $http;
     this.NgMap = NgMap;
     this.isLoggedIn = Auth.isLoggedIn
     this.getCurrentUser = Auth.getCurrentUser;
-    this.$cidade = $stateParams.cidade || 'lorena'
+    this.$cidade = $stateParams.cidade || $window.sessionStorage.getItem('cidade')
+    this.$brasil = {
+      $estados: []
+    };
+    this.$estadoSelecionado = {
+        cidades: []
+
+    };
+
+    this.$cidadeSelecionada="";
 
 
     $http.get('/api/things/' + this.$cidade ).then(response => {
@@ -19,11 +28,46 @@ class MainController {
 
     });
 
+    this.$http.get('/assets/json/states.json').then(response =>{
+      this.$brasil.$estados = response.data.estados
+ 
+    })
+
     $scope.$on('$destroy', function() {
         socket.unsyncUpdates('thing');
       });
-   }
 
+      $timeout(() => {
+
+        if($window.sessionStorage.getItem('cidade') != $stateParams.cidade){
+              $window.sessionStorage.clear();
+               $scope.$watch('main.$cidadeSelecionada', (cidade, antiga) => {
+                  if(cidade){
+                    $window.sessionStorage.setItem('cidade', Util.urlFriendly(cidade));
+                    $window.sessionStorage.setItem('estado', JSON.stringify(this.$estadoSelecionado));
+                    $window.location.href='/'+Util.urlFriendly(cidade)
+                  }
+                })
+              $('#modal-reportar').modal('show')
+        }else if($window.sessionStorage.getItem('cidade') && $window.sessionStorage.getItem('estado')){
+            this.$cidadeSelecionada = $window.sessionStorage.getItem('cidade');
+            this.$estadoSelecionado = JSON.parse($window.sessionStorage.getItem('estado'));
+            $('#modal-reportar').modal('hide')
+        }else{
+           $scope.$watch('main.$cidadeSelecionada', (cidade, antiga) => {
+              if(cidade){
+                $window.sessionStorage.setItem('cidade', Util.urlFriendly(cidade));
+                $window.sessionStorage.setItem('estado', JSON.stringify(this.$estadoSelecionado));
+                $window.location.href='/'+Util.urlFriendly(cidade)
+              }
+            })
+
+
+           $('#modal-reportar').modal('show')
+         }
+      
+      }, 100);
+   }
 
   showInfoWindow(event, foco){
      
@@ -35,6 +79,8 @@ class MainController {
         infowindow.open(this.map);
         this.map.setCenter(center);
   }
+
+
 
 }
 

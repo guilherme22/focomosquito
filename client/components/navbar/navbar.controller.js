@@ -2,15 +2,16 @@
 
 class NavbarController {
   //start-non-standard
-  menu = [{
-    'title': 'Inicio',
-    'state': 'main'
-  }];
-
+ 
   isCollapsed = true;
   //end-non-standard
 
-  constructor(Auth) {
+  constructor(Auth, $window) {
+    this.menu = [{
+    'title': 'Inicio',
+    'href': '/' + $window.sessionStorage.getItem('cidade')
+  }];
+
     this.isLoggedIn = Auth.isLoggedIn;
     this.isAdmin = Auth.isAdmin;
     this.getCurrentUser = Auth.getCurrentUser;

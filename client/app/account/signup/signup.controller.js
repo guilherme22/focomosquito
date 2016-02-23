@@ -7,9 +7,10 @@ class SignupController {
   submitted = false;
   //end-non-standard
 
-  constructor(Auth, $state) {
+  constructor(Auth, $state, $window) {
     this.Auth = Auth;
     this.$state = $state;
+    this.$window = $window
   }
 
   register(form) {
@@ -23,7 +24,10 @@ class SignupController {
       })
       .then(() => {
         // Account created, redirect to home
-        this.$state.go('main');
+        var city = this.$window.sessionStorage.getItem('cidade');
+        this.$state.go('main',{
+          cidade: city
+        });
       })
       .catch(err => {
         err = err.data;

@@ -13,12 +13,13 @@ angular.module('focoApp')
         url: '/logout?referrer',
         referrer: 'main',
         template: '',
-        controller: function($state, Auth) {
+        controller: function($state, Auth, $window) {
           var referrer = $state.params.referrer ||
                           $state.current.referrer ||
                           'main';
           Auth.logout();
-          $state.go(referrer);
+          var city = $window.sessionStorage.getItem('cidade');
+          $state.go(referrer,{cidade: city});
         }
       })
       .state('signup', {

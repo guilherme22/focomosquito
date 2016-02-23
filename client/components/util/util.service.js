@@ -53,6 +53,19 @@ function UtilService($window) {
           url.protocol === o.protocol;
       });
       return (origins.length >= 1);
+    },
+
+    urlFriendly(url){
+      return url.toLowerCase().trim()
+             .replace(/[áàãâä]/g,    "a")
+             .replace(/[éèẽêë]/g,    "e")
+             .replace(/[íìĩîï]/g,    "i")
+             .replace(/[óòõôö]/g,    "o")
+             .replace(/[úùũûü]/g,    "u")
+             .replace(/ç/g,          "c")
+             .replace(/(\ |_)+/,     " ")
+             .replace(/(^-+|-+$)/,   "")
+             .replace(/[^a-z0-9]+/g, "-");
     }
   };
 

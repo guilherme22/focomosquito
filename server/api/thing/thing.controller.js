@@ -73,7 +73,7 @@ function handleError(res, statusCode) {
 // Gets a list of Things
 export function index(req, res) {
   Thing
-    .find({cidade: req.params.cidade})
+    .find({cidade: req.params.cidade.toLowerCase()})
     .populate('user', 'name')
     .execAsync()
     .then(respondWithResult(res))
