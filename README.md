@@ -1,5 +1,4 @@
-[![Build Status](https://travis-ci.org/guilherme22/focolorena.svg?branch=master)](https://travis-ci.org/guilherme22/focolorena)
-
+[![Build Status](https://travis-ci.org/guilherme22/focomosquito.svg?branch=master)](https://travis-ci.org/guilherme22/focomosquito)
 # foco lorena
 
 
