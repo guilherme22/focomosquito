@@ -58,13 +58,23 @@
 
              <p>
              
-              <select
+              <angucomplete-alt id="ex1"
+              placeholder="cidade"
+              pause="100"
+              selected-object="main.$cidadeSelecionada"
+              local-data="main.$estadoSelecionado.cidades"
+              search-fields=""
+              title-field=""
+              minlength="1"
+              input-class="form-control form-control-small"/>
+
+          <!--     <select
                 name="cidades"
                 id="cidades"
                 ng-options="cidade for cidade in main.$estadoSelecionado.cidades"
                 ng-model="main.$cidadeSelecionada"
               >
-
+ -->
               </select>
              </p> 
         </div>

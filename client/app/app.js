@@ -15,7 +15,8 @@ angular.module('focoApp', [
   'ngMap',
   'google.places',
   'ezfb',
-  'naif.base64'
+  'naif.base64',
+  'angucomplete-alt'
 ])
   .config(function($urlRouterProvider, $locationProvider, ezfbProvider) {
      ezfbProvider.setLocale('pt_BR');
