@@ -11,8 +11,9 @@ class MainController {
     this.getCurrentUser = Auth.getCurrentUser;
     this.$cidade = $stateParams.cidade || $window.sessionStorage.getItem('cidade')
     this.$brasil = {
-      $estados: []
+      $estados: Util.states().estados
     };
+
     this.$estadoSelecionado = {
         cidades: []
 
@@ -28,10 +29,10 @@ class MainController {
 
     });
 
-    this.$http.get('/assets/json/states.json').then(response =>{
-      this.$brasil.$estados = response.data.estados
+    // this.$http.get('/assets/json/states.json').then(response =>{
+    //   this.$brasil.$estados = response.data.estados
  
-    })
+    // })
 
     $scope.$on('$destroy', function() {
         socket.unsyncUpdates('thing');
