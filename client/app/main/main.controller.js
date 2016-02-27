@@ -43,9 +43,9 @@ class MainController {
               $window.sessionStorage.clear();
                $scope.$watch('main.$cidadeSelecionada', (cidade, antiga) => {
                   if(cidade){
-                    $window.sessionStorage.setItem('cidade', Util.urlFriendly(cidade));
+                    $window.sessionStorage.setItem('cidade', Util.urlFriendly(cidade.title));
                     $window.sessionStorage.setItem('estado', JSON.stringify(this.$estadoSelecionado));
-                    $window.location.href='/'+Util.urlFriendly(cidade)
+                    $window.location.href='/'+Util.urlFriendly(cidade.title)
                   }
                 })
               $('#modal-reportar').modal('show')
@@ -56,9 +56,9 @@ class MainController {
         }else{
            $scope.$watch('main.$cidadeSelecionada', (cidade, antiga) => {
               if(cidade){
-                $window.sessionStorage.setItem('cidade', Util.urlFriendly(cidade));
+                $window.sessionStorage.setItem('cidade', Util.urlFriendly(cidade.title));
                 $window.sessionStorage.setItem('estado', JSON.stringify(this.$estadoSelecionado));
-                $window.location.href='/'+Util.urlFriendly(cidade)
+                $window.location.href='/'+Util.urlFriendly(cidade.title)
               }
             })
 
@@ -67,7 +67,19 @@ class MainController {
          }
       
       }, 100);
+
+
    }
+
+  changeState(estado){
+    this.$estadoSelecionado.cidades = this.$estadoSelecionado.cidades.map(function(cidade){
+      return {
+        nome: cidade
+      }
+    })
+    console.log(this.$estadoSelecionado);
+
+  } 
 
   showInfoWindow(event, foco){
      

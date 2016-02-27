@@ -48,6 +48,7 @@
               <select 
                 name="estados"
                 id="estados"
+                ng-change="main.changeState()"
                 ng-model="main.$estadoSelecionado"
                 ng-options="estado.nome for estado in main.$brasil.$estados track by estado.sigla"
               >
@@ -63,8 +64,8 @@
               pause="100"
               selected-object="main.$cidadeSelecionada"
               local-data="main.$estadoSelecionado.cidades"
-              search-fields=""
-              title-field=""
+              search-fields="nome"
+              title-field="nome"
               minlength="1"
               input-class="form-control form-control-small"/>
 
