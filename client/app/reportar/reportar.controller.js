@@ -43,6 +43,7 @@ angular.module('focoApp')
 
 					        }
 					 }
+					 toastr.success('Logo notificaremos a prefeitura de sua denúncia:)', 'Obrigado por colaborar!')
 			        $scope.position = {}
 		      });
 

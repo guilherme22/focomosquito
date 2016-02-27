@@ -39,11 +39,11 @@
  
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Reportar novo foco</h4>
+          <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+          <h4 class="modal-title">Qual região você mora?</h4>
         </div>
         <div class="modal-body">
-          <label>Qual o endereço do foco?</label>
+          <label>Qual seu estado?</label>
             <p>
               <select  class="form-control"
                 name="estados"
@@ -52,15 +52,13 @@
                 ng-model="main.$estadoSelecionado"
                 ng-options="estado.nome for estado in main.$brasil.$estados track by estado.sigla"
               >
-                  <!-- <option value="{{estado}}" ng-repeat="estado in main.$brasil.$estados track by $index">
-                      {{estado.nome}}
-                  </option> -->
               </select>
-
+             </p>
+             <title>Qual sua cidade?</title> 
              <p>
              
               <angucomplete-alt id="ex1"
-              placeholder="cidade"
+              placeholder="Digite sua cidade.."
               pause="100"
               selected-object="main.$cidadeSelecionada"
               local-data="main.$estadoSelecionado.cidades"
@@ -68,19 +66,11 @@
               title-field="nome"
               minlength="1"
               input-class="form-control form-control-small"/>
-
-          <!--     <select
-                name="cidades"
-                id="cidades"
-                ng-options="cidade for cidade in main.$estadoSelecionado.cidades"
-                ng-model="main.$cidadeSelecionada"
-              >
- -->
               </select>
              </p> 
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+         <!--  <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button> -->
         </div>
       </div>
       
