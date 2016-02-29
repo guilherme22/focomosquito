@@ -59,7 +59,7 @@ UserSchema
       return true;
     }
     return email.length;
-  }, 'Email cannot be blank');
+  }, 'Email não pode ficar em branco');
 
 // Validate empty password
 UserSchema
