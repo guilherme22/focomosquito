@@ -1,12 +1,12 @@
 'use strict';
 
-// Set default node environment to development
+// Setando o ambiente default de desenvolvimento.
 var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
 if (env === 'development' || env === 'test') {
-  // Register the Babel require hook
+  // Registrando require do babel HOOK
   require('babel-core/register');
 }
 
-// Export the application
+// Expor aplicação
 exports = module.exports = require('./app');
