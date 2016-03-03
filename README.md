@@ -28,4 +28,4 @@ Execute `grunt build` para buildar o projeto e `grunt serve` para um preview.
 
 ## Testes
 
-Execute `npm test` vai executar os testes.
+Execute `npm test` que será executado os testes.
