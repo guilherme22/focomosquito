@@ -78,8 +78,7 @@ class MainController {
         nome: cidade
       }
     })
-    console.log(this.$estadoSelecionado);
-
+    
   } 
 
   showInfoWindow(event, foco){
